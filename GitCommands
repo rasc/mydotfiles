@@ -1,0 +1,58 @@
+#config
+ssh-keygen -t rsa                          #creating a new key pair 
+git config --global user.name  'name'      #seting a user name
+git config --global user.email 'email'     #seting a user email
+git config --global color.status auto      #seting color to status 
+git config --global color.branch auto      #seting color to branch 
+git config --global color.interactive auto #seting color to interactive 
+git config --global color.diff auto        #seting color to diff 
+
+#commands
+git help / help 'command'                   #help - http://progit.org/book/ http://whygitisbetterthanx.com http://git-scm.com 
+git init                                    #start versioning
+git status                                  #list branch's status
+git add .                                   #adding all files to track
+git add 'file'                              #adding file files to track
+git add -i                                  #adding by interactive
+git rm --cached 'file'                      #delete file from track - untracked
+git reset HEAD 'file'                      #remove the file from the next commit
+git reset HEAD~1 --hard                    #rollback all files one time last commit and delete modified files 
+git reset HEAD~1 --soft                    #get files and delete one time of last commit. Rollback all files one time
+git clean -f                                #delete files out index area
+git reflog                                  #show what deleted
+git commit -a -m 'message'                  #commit all files and insert a message
+git commit --amend                          #insert the modified files to last commit
+git log                                     #get log
+git log --stat                              #get log and show a difference between last commit and commit
+git log --pretty=oneline                    #show commits one line
+git log --pretty=format:'[%an %ad] %h - %s' #show commits one line and custom log
+git log --graph                             #get log on graph terminal
+git log --since=4.hours --until=2.hours    #range log
+git log --author                            #show log filter by author
+git log --before='2011-06-10'               #show log filter by date
+git checkout 'file'                         #get file of branch
+git checkout 'branch_name'                  #switched to branch 'branch_name'
+git checkout -b 'branch_name'               #copy the actual branch to new branch_name
+git branch                                  #list branchs
+git branch -d 'branch_name'                 #delete branch
+git branch -D 'branch_name'                 #force delete branch
+git merge 'branch_name'                     #merge 'branch_name to actual branch'
+git merge 'sha1'                            #recover the commit showed on git reflog
+git merge 'branch_name' --squash            #merge all commits of branch_name to actual branch but not commit
+git rebase 'branch_name'                    #get the work on top, of branch_name, and apply on actual branch
+git rebase --continue                       #when two or more file conflicted, after the correction this command continue the rebase
+gitk --all &                                #git graph
+git tag 'tag'                               #create tag, use to define version.
+
+#commands repository
+git clone 'path'                                   #clone project from anywhere
+git clone 'project'/.git 'path destiny'            #clone project git folder
+git remote                                         #list git remote
+git remote show 'remote'                           #show details about remote origin
+git checkout -b 'branch_name' 'path/branch_name'   #create new branch from remote
+git push 'remote' 'branch_name'                    #send branch_name to remote
+git remote add origin 'path'                       #set origin
+git pull origin 'branch_name'                      #get the modified files from origin
+git remote rm origin                               #delete remote
+git push --tags                                    #send to repository the tag
+git push 'path remote' 'tag'                       #send to repository the tag
