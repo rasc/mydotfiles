@@ -1,8 +1,14 @@
 Objective
 This files are just help me when i lost my computer (again...). If you liked, use like reference.
 
+OS - Ubuntu 11.04
+
+Wireless
+Config wireless
+
 Git Commands
 About git commands - summary
 
 My custom bash
-
+Replace file ~/.bashrc
+Copy file .ibashrc to ~/

@@ -1,0 +1,13 @@
+#Config my wirelless 
+#Notebook dell 1320 - ubuntu 11.04
+
+sudo ifconfig wlan0 up
+sudo iwlist scan
+
+sudo rmmod -f dell-laptop
+sudo rfkill unblock all
+rfkill list all
+
+sudo su
+echo "blacklist dell-laptop" >> /etc/modprobe.d/blacklist.conf
+exit
